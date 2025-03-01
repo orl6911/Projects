@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Noto+Sans+Warang+Citi&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
 </head>
 <body>
     <div class="container">
@@ -108,17 +109,16 @@
                 </div>
                 <div class="project-item">
                     <img id="project1" src="images/FINAL.jpg" alt="Centered Image">
-                    <h3>Project 1</h3>
+                    <h3>Project 3</h3>
                     <p>I designed and built this One Piece game dashboard using Visual Studio. It serves as the main hub where players can access game features, stats, and other important info. The layout is clean and easy to navigate, making it simple for users to interact with different sections. This project was a great way to combine my love for One Piece with my skills in UI design and development!</p>
                 </div>
             </div>
             <p class="neon-text">Here are samples of my video editing work.</p>
-            <p>
-               
-                <a href="https://drive.google.com/drive/folders/1qN1l1XxrkCIkQmGxEQ4xQ2veUtkQ-6Qi?usp=sharing" target="_blank" style="color: #00ffcc; text-decoration: underline;">
-                    Watch My Edits
+            <div class="watch-edits-container">
+                <a href="https://drive.google.com/drive/folders/1qN1l1XxrkCIkQmGxEQ4xQ2veUtkQ-6Qi?usp=sharing" target="_blank" class="watch-edits-button">
+                    <i class="fas fa-video"></i> Watch My Edits
                 </a>
-            </p>
+            </div>
            
         </section>
 
@@ -132,25 +132,24 @@
     <footer>
         <p>&copy; 2025 My Portfolio. All rights reserved.</p>
     </footer>
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const coder = document.querySelector(".coder");
             const designer = document.querySelector(".designer");
-        
+    
             function showSection(sectionId) {
-      const sections = document.querySelectorAll("section");
-      sections.forEach(section => {
-          section.classList.remove("active");
-          section.classList.add("fade");
+                const sections = document.querySelectorAll("section");
+                sections.forEach(section => {
+                    section.classList.remove("active");
+                    section.classList.add("fade");
                 });
-        
+    
                 const activeSection = document.getElementById(sectionId);
-      if (activeSection) {
-          activeSection.classList.remove("fade");
-          activeSection.classList.add("active");
-      }
-        
+                if (activeSection) {
+                    activeSection.classList.remove("fade");
+                    activeSection.classList.add("active");
+                }
+    
                 if (sectionId === "home") {
                     coder.style.display = "block";
                     designer.style.display = "block";
@@ -159,9 +158,9 @@
                     designer.style.display = "none";
                 }
             }
-        
+    
             showSection("home");
-        
+    
             document.querySelectorAll("nav ul li a").forEach(link => {
                 link.addEventListener("click", function (event) {
                     event.preventDefault();
@@ -169,23 +168,8 @@
                     showSection(sectionId);
                 });
             });
-    
-            const projectImages = document.querySelectorAll('.project-item img');
-            projectImages.forEach(image => {
-                image.addEventListener('click', function() {
-                    if (this.requestFullscreen) {
-                        this.requestFullscreen();
-                    } else if (this.mozRequestFullScreen) {
-                        this.mozRequestFullScreen();
-                    } else if (this.webkitRequestFullscreen) { 
-                        this.webkitRequestFullscreen();
-                    } else if (this.msRequestFullscreen) { 
-                        this.msRequestFullscreen();
-                    }
-                });
-            });
         });
-        </script>
+    </script>
     
     <style>
      
@@ -205,7 +189,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Noto Sans Warang Citi', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #0d0d0d;
@@ -228,8 +212,9 @@
         }
 
         .role-text {
+            font-family: 'Jersey 10', sans-serif;
             position: absolute;
-            font-size: 3rem; 
+            font-size: 5rem; 
             font-weight: bold;
             color: rgba(255, 255, 255, 0.9); 
             text-transform: uppercase;
@@ -406,7 +391,8 @@
         }
 
         section#projects {
-            
+            text-align: center;
+    margin: 20px 0;
             background-color: rgba(0, 0, 255, 0.1);
         }
 
@@ -495,8 +481,24 @@ section#contact:hover {
             border-radius: 50%;
             animation: twinkle 1.5s infinite alternate;
         }
+        .watch-edits-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ffcc;
+    color: #0d0d0d;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.watch-edits-button:hover {
+    background-color: #00e6b3;
+    transform: scale(1.05);
+}
 
-        .video-edits-container {
+.watch-edits-container {
+    margin-top: 20px;
+}        .video-edits-container {
             background-color: rgba(0, 0, 0, 0.7); 
             padding: 4px; 
             border-radius: 4px; 
@@ -507,50 +509,66 @@ section#contact:hover {
         }
 
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column; 
-                padding: 20px; 
-            }
+    .hero {
+        flex-direction: column; 
+        padding: 20px; 
+    }
 
-            .hero-img img {
-                height: auto; 
-                width: 100%; 
-            }
+    .hero-img img {
+        height: auto; 
+        width: 100%; 
+    }
 
-            .project-container {
-                flex-direction: column; 
-                align-items: center; 
-            }
+    .project-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
 
-            .project-item {
-                width: 90%; 
-                margin: 10px 0; 
-            }
+    .project-item {
+        width: 90%; 
+        margin: 10px 0; 
+    }
 
-            nav ul {
-                flex-direction: column; 
-                padding: 0; 
-            }
+    nav ul {
+        flex-direction: column; 
+        padding: 0; 
+    }
 
-            nav ul li {
-                margin: 10px 0; 
-            }
+    nav ul li {
+        margin: 10px 0; 
+    }
 
-            .tool-icons {
-                flex-direction: column; 
-                align-items: center; 
-            }
+    .tool-icons {
+        flex-direction: column; 
+        align-items: center; 
+    }
 
-            .tool-icon {
-                width: 80%; 
-            }
+    .tool-icon {
+        width: 80%; 
+    }
 
-            .contact-info {
-                font-size: 1rem; 
-            }
+    .contact-info {
+        font-size: 1rem; 
+    }
 
-            .video-edits-container {
-                padding: 10px; 
-            }
-        }
+    .video-edits-container {
+        padding: 10px; 
+    }
+
+   
+    .role-text {
+        font-size: 3rem;
+        letter-spacing: 1px; 
+    }
+
+    .coder {
+        top: 50%; 
+        right: 5%;
+    }
+
+    .designer {
+        top: 50%; 
+        left: 5%;
+    }
+}
 </style>
