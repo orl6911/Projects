@@ -1103,5 +1103,27 @@ footer {
 .typing-title {
         font-size: 1.5rem;
     }
+     .particle {
+        width: 3px; 
+        height: 3px;
+        animation: floatParticles 10s infinite linear; 
+    }
+
+    .particles {
+        
+        animation: none; 
+    }
+}
+
+@keyframes floatParticles {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-50px) translateX(50px);
+    }
+    100% {
+        transform: translateY(0) translateX(-50px);
+    }
 }
 </style>
