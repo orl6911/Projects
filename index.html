@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Noto+Sans+Warang+Citi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+          
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <title>My Portfolio</title>
 </head>
 <body>
-    
-    
+    <div id="loader">
+        <div class="loader-content">
+          <p class="loading-text">LOADING...</p>
+          <button id="start-button">PRESS START</button>
+        </div>
+    </div>
+
     <div class="container">
         <div class="image-container">
             <div class="role-text coder">ED<span class="it-text">&lt;IT&gt;</span>OR</div>
@@ -31,26 +40,33 @@
     </div>
 
     <header>
-        <h2 class="video-title neon-text">Welcome to my Portfolio</h2>
+        <h2 class="typing-title">Welcome to my Portfolio</h2>
+
         <nav>
             <ul>
-                <li><a href="#" onclick="showSection('home')">Home</a></li>
-    
-                <li><a href="#" onclick="showSection('projects')">Projects</a></li>
-                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                
+                <li><a href="#" data-section="home">Home</a></li>
+<li><a href="#" data-section="projects">Projects</a></li>
+<li><a href="#" data-section="contact">Contact</a></li>
+
             </ul>
         </nav>
     </header>
         
     <section id="home" class="active">
         <div class="hero">
+            
             <div class="hero-text">
+                <h2><span id="typed-text"></span></h2>
                 <div class="intro-box">
+                    <div class="glow-card">
                     <span class="neon-text">Hi. I'm Orl.</span> 
                     <p>I'm an IT student who loves video editing and web design, always exploring new creative ideas and technologies.</p>
                 </div>
             </div>
+        </div>
             <div class="hero-img">
+                
                 <img src="images/profile.jpg" alt="Profile Picture">
             </div>
         </div>
@@ -96,24 +112,44 @@
 
 
     <div id="projects-bar">
-        <section id="projects">
+        <section id="projects" class="projects-section">
             <p class="neon-text">Web Design Projects Showcase</p>
             <div class="project-container">
+                <div class="project-card">
                 <div class="project-item">
+                    
                     <img id="project1" src="images/vbn.jpg" alt="Centered Image">
                     <h3>Project 1</h3>
                     <p>I created this library website design using Figma. The goal was to make it clean, easy to navigate, and user-friendly. It includes a search bar, organized book sections, and a responsive layout that works on both desktop and mobile. This project was a fun way to practice designing a simple but functional website!</p>
+                    <div class="badges">
+                        <span class="badge">Figma</span>
+                      </div>
                 </div>
+            </div>
+                <div class="project-card">
                 <div class="project-item">
                     <img id="project2" src="images/Your paragraph text (2).jpg" alt="Centered Image">
                     <h3>Project 2</h3>
                     <p>I designed this online classroom with a techy and modern feel, making it a great space for students who love technology. The layout is sleek, organized, and easy to use, with features that help students navigate their lessons smoothly. I wanted to create something that feels both futuristic and functional, making online learning more engaging and interactive!</p>
+                    <div class="badges">
+                        <span class="badge">Canva</span>
+        
+                      </div>
                 </div>
+            </div>
+                <div class="project-card">
                 <div class="project-item">
-                    <img id="project1" src="images/FINAL.jpg" alt="Centered Image">
+                    <img id="project3" src="images/FINAL.jpg" alt="Centered Image">
                     <h3>Project 3</h3>
                     <p>I designed and built this One Piece game dashboard using Visual Studio. It serves as the main hub where players can access game features, stats, and other important info. The layout is clean and easy to navigate, making it simple for users to interact with different sections. This project was a great way to combine my love for One Piece with my skills in UI design and development!</p>
+                    <div class="badges">
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">2025</span>
+                      </div>
                 </div>
+            </div>
             </div>
             <p class="neon-text">Here are samples of my video editing work.</p>
             <div class="watch-edits-container">
@@ -134,37 +170,40 @@
                     <a href="https://www.linkedin.com/in/earl-mirshen-dupaya-mabesa-1277652b6/" target="_blank" class="contact-link">LinkedIn</a>
                 </p>
             </div>
-          
+
+        </body>
         </section>
     <footer>
         <p>&copy; 2025 My Portfolio. All rights reserved.</p>
     </footer>
     <script>
-        const text = "Hi. I'm Orl.";
-    let index = 0;
-
-    function type() {
-        if (index < text.length) {
-            document.getElementById("typing-effect").innerHTML += text.charAt(index);
-            index++;
-            setTimeout(type, 100); 
-        }
-    }
         document.addEventListener("DOMContentLoaded", function () {
             const coder = document.querySelector(".coder");
             const designer = document.querySelector(".designer");
     
             function showSection(sectionId) {
                 const sections = document.querySelectorAll("section");
-                sections.forEach(section => {
-                    section.classList.remove("active");
-                    section.classList.add("fade");
-                });
+                const activeSection = document.querySelector("section.active");
     
-                const activeSection = document.getElementById(sectionId);
                 if (activeSection) {
-                    activeSection.classList.remove("fade");
-                    activeSection.classList.add("active");
+                    activeSection.classList.add("slide-up");
+                    activeSection.classList.remove("active");
+    
+                    activeSection.addEventListener("animationend", function() {
+                        activeSection.classList.remove("slide-up");
+                        activeSection.classList.add("fade");
+                    }, { once: true });
+                }
+    
+                const newSection = document.getElementById(sectionId);
+                if (newSection) {
+                    newSection.classList.remove("fade");
+                    newSection.classList.add("slide-down");
+                    newSection.classList.add("active");
+    
+                    newSection.addEventListener("animationend", function() {
+                        newSection.classList.remove("slide-down");
+                    }, { once: true });
                 }
     
                 if (sectionId === "home") {
@@ -179,22 +218,151 @@
             showSection("home");
     
             document.querySelectorAll("nav ul li a").forEach(link => {
-                link.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    const sectionId = this.getAttribute("onclick").match(/'([^']+)'/)[1];
-                    showSection(sectionId);
-                });
-            });
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const sectionId = this.dataset.section;
+        showSection(sectionId);
+    });
+});
+
         });
+        var typed = new Typed("#typed-text", {
+    strings: ["Video Editor", "Web Designer", "Frontend Developer", "Gamer"], 
+    typeSpeed: 80,    
+    backSpeed: 50,    
+    backDelay: 1500,   
+    loop: true,       
+    showCursor: true,  
+    cursorChar: "|",   
+  });
+  const startButton = document.getElementById('start-button');
+const loader = document.getElementById('loader');
+
+startButton.addEventListener('click', () => {
+  loader.style.opacity = '0';
+  setTimeout(() => {
+    loader.style.display = 'none';
+  }, 500); // matches the fade duration
+});
+
+const cursor = document.createElement('div');
+cursor.id = 'cursor-trail';
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
+});
+
+
     </script>
-    
-    <style>
-     
-      
-    </style>
-</body>
-</html>
+
+
+
 <style>
+    
+    .badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.badge {
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background: #00ffff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+    .typing-title {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #0ff;
+  font-size: 2rem;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0ff;
+  }
+}
+.intro-box, .project-item {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  overflow: hidden;
+}
+
+
+    #loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  color: #0f0; 
+  font-family: 'Press Start 2P', cursive;
+}
+
+.loader-content {
+  text-align: center;
+  animation: flicker 1.5s infinite;
+}
+
+#start-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid #0f0;
+  color: #0f0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+    #typed-text {
+  color: #00FFFF; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00FFFF, 0 0 16px #00FFFF;
+}
+
       .fade {
     opacity: 0;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -211,6 +379,7 @@ body {
     padding: 0;
     background-color: #0d0d0d;
     color: #ffffff;
+    overflow-x: hidden;
     overflow-y: auto; 
     min-height: 100vh;
     display: flex;
@@ -227,10 +396,78 @@ header {
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0ff, transparent);
+  animation: move 3s linear infinite;
+}
+.glow-card {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #001f1f; 
+  color: #fff;
+  box-shadow: 0 0 20px #00ffcc, inset 0 0 10px #00ffcc;
+  animation: pulse 3s infinite;
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px #00ffcc, inset 0 0 10px #00ffcc; }
+  50% { box-shadow: 0 0 40px #00ffcc, inset 0 0 20px #00ffcc; }
+}
+.glow-card h1 {
+  font-size: 2rem;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  margin-bottom: 10px;
+}
+
+@keyframes move {
+  from { background-position: 0; }
+  to { background-position: 100%; }
+}
+.project-card {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(90deg, #00ff9d, #00fff2, #09ff00);
+  background-size: 300% 300%;
+  animation: pulseBorder 5s infinite linear;
+  z-index: -1;
+}
+
+@keyframes pulseBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 .role-text {
-    font-family: 'Jersey 10', sans-serif;
     position: absolute;
+    z-index: 2;     
+    font-family: 'Jersey 10', sans-serif;
     font-size: 5rem; 
     font-weight: bold;
     color: rgba(255, 255, 255, 0.9); 
@@ -281,7 +518,7 @@ header {
     border-radius: 10px;
     margin: 10px; 
     transition: transform 0.3s, box-shadow 0.3s;
-    perspective: 1000px; /* Add perspective for 3D effect */
+    perspective: 1000px;
 }
 
 .project-item:hover {
@@ -344,6 +581,8 @@ nav ul li a:hover {
 }
 
 .hero {
+    position: relative; 
+    z-index: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -421,9 +660,11 @@ section#contact {
     border-radius: 15px;
     margin: 20px auto;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-    transition: transform 0.3s, box-shadow 0.3s;
+    color: #00ffcc;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
 }
+
 
 section#contact:hover {
     transform: scale(1.02);
@@ -531,16 +772,55 @@ footer {
     text-align: center; 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
 }
-
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column; 
-        padding: 20px; 
+.slide-up {
+        animation: slideUp 0.5s forwards;
     }
 
+    .slide-down {
+        animation: slideDown 0.5s forwards;
+    }
+    #cursor-trail {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(0, 255, 170, 0.8);
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.8);
+  transform: translate(-50%, -50%);
+}
+
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideDown {
+        0% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 30px 10px;
+    }
     .hero-img img {
         height: auto; 
         width: 100%; 
+        height: 250px;
     }
 
     .project-container {
@@ -549,7 +829,7 @@ footer {
     }
 
     .project-item {
-        width: 90%; 
+        width: 100%; 
         margin: 10px 0; 
     }
 
@@ -585,12 +865,14 @@ footer {
     }
 
     .coder {
-        top: 50%; 
+        font-size: 2rem;
+        top: 70%; 
         right: 5%;
     }
 
     .designer {
-        top: 50%; 
+        font-size: 2rem;
+        top: 70%; 
         left: 5%;
     }
 }
