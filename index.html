@@ -979,7 +979,7 @@ footer {
             opacity: 1;
         }
     }
- @media (max-width: 768px) {
+@media (max-width: 768px) {
         body {
         font-size: 16px;
         line-height: 1.5; 
@@ -1075,14 +1075,8 @@ footer {
         text-align: center; 
     }
 
-    .coder,
-    .designer {
-        font-size: 1.8rem;
-        top: unset;
-        bottom: 10%;
-    }
-
     .coder {
+       
         right: 5%;
     }
 
@@ -1100,30 +1094,28 @@ footer {
         max-width: 100%;
         box-sizing: border-box;
     }
-.typing-title {
-        font-size: 1.5rem;
+    .particle {
+        width: 4px; 
+        height: 4px;
+        animation: floatParticles 8s infinite linear; 
     }
-     .particle {
-        width: 3px; 
-        height: 3px;
-        animation: floatParticles 10s infinite linear; 
-    }
-
-    .particles {
-        
-        animation: none; 
-    }
-}
-
-@keyframes floatParticles {
+    @keyframes floatParticles {
     0% {
-        transform: translateY(0) translateX(0);
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(30px, -30px);
     }
     50% {
-        transform: translateY(-50px) translateX(50px);
+        transform: translate(0, -60px);
+    }
+    75% {
+        transform: translate(-30px, -30px);
     }
     100% {
-        transform: translateY(0) translateX(-50px);
+        transform: translate(0, 0);
     }
 }
+ }
+
 </style>
