@@ -242,7 +242,7 @@ startButton.addEventListener('click', () => {
   loader.style.opacity = '0';
   setTimeout(() => {
     loader.style.display = 'none';
-  }, 500);
+  }, 500); // matches the fade duration
 });
 
 const cursor = document.createElement('div');
@@ -253,10 +253,7 @@ document.addEventListener('mousemove', (e) => {
   cursor.style.left = e.pageX + 'px';
   cursor.style.top = e.pageY + 'px';
 });
-window.addEventListener('load', () => {
-  document.body.classList.remove('loading');
-  document.getElementById('loader').style.display = 'none';
-});
+
 
     </script>
 
@@ -327,16 +324,15 @@ window.addEventListener('load', () => {
 
 
 #loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
   z-index: 9999;
   font-family: 'Press Start 2P', cursive;
 }
@@ -357,6 +353,7 @@ body.loading {
   color: #0f0;
   cursor: pointer;
   font-size: 14px;
+  z-index: 10000;
 }
 
 @keyframes flicker {
@@ -896,11 +893,11 @@ footer {
         height: auto; 
         max-width: 400px;
     }
-     #loader {
-        display: flex; 
-        justify-content: center; 
-        align-items: center;
-    }
+    #loader .loader-content {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
 
     .loader-content {
         width: 100%;
