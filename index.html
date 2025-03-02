@@ -242,7 +242,7 @@ startButton.addEventListener('click', () => {
   loader.style.opacity = '0';
   setTimeout(() => {
     loader.style.display = 'none';
-  }, 500); // matches the fade duration
+  }, 500);
 });
 
 const cursor = document.createElement('div');
@@ -253,7 +253,10 @@ document.addEventListener('mousemove', (e) => {
   cursor.style.left = e.pageX + 'px';
   cursor.style.top = e.pageY + 'px';
 });
-
+window.addEventListener('load', () => {
+  document.body.classList.remove('loading');
+  document.getElementById('loader').style.display = 'none';
+});
 
     </script>
 
@@ -323,17 +326,22 @@ document.addEventListener('mousemove', (e) => {
 }
 
 
-    #loader {
+#loader {
   position: fixed;
-  inset: 0;
-  background: #000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   z-index: 9999;
-  color: #0f0; 
   font-family: 'Press Start 2P', cursive;
+}
+body.loading {
+  overflow: hidden;
 }
 
 .loader-content {
@@ -931,5 +939,5 @@ footer {
         box-sizing: border-box;
     }
 
-    
 }
+</style>
