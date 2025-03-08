@@ -116,49 +116,53 @@
             <p class="neon-text">Web Design Projects Showcase</p>
             <div class="project-container">
                 <div class="project-card">
-                <div class="project-item">
-                    
-                    <img id="project1" src="images/vbn.jpg" alt="Centered Image">
-                    <h3>Project 1</h3>
-                    <p>I created this library website design using Figma. The goal was to make it clean, easy to navigate, and user-friendly. It includes a search bar, organized book sections, and a responsive layout that works on both desktop and mobile. This project was a fun way to practice designing a simple but functional website!</p>
-                    <div class="badges">
-                        <span class="badge">Figma</span>
-                      </div>
+                    <div class="project-item">
+                        <img id="project1" src="images/puto.jpg" alt="Centered Image">
+                        <h2 class="video-title neon-text">Project 1</h2>
+                        <p>I made this interactive photobooth app that lets you apply filters, choose from four unique styles, and download your customized photos instantly for a fun and personalized experience!</p>
+                        <div class="badges">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                            <span class="badge">JavaScript</span>
+                        </div>
+                        <a href="https://orl6911.github.io/ArcadePhotobooth/" target="_blank" class="project-link">Here's the link to my project</a>
+                    </div>
                 </div>
-            </div>
                 <div class="project-card">
-                <div class="project-item">
-                    <img id="project2" src="images/Your paragraph text (2).jpg" alt="Centered Image">
-                    <h3>Project 2</h3>
-                    <p>I designed this online classroom with a techy and modern feel, making it a great space for students who love technology. The layout is sleek, organized, and easy to use, with features that help students navigate their lessons smoothly. I wanted to create something that feels both futuristic and functional, making online learning more engaging and interactive!</p>
-                    <div class="badges">
-                        <span class="badge">Canva</span>
-        
-                      </div>
+                    <div class="project-item">
+                        <img id="project2" src="images/vbn.jpg" alt="Centered Image">
+                        <h2 class="video-title neon-text">Project 2</h2>
+                        <p>I made this library shop website design in Figma, combining a modern and user-friendly layout for easy book browsing and purchasing. It features a clean aesthetic, seamless navigation, and a responsive design for an engaging shopping experience!</p>
+                        <div class="badges">
+                            <span class="badge">Figma</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
                 <div class="project-card">
-                <div class="project-item">
-                    <img id="project3" src="images/FINAL.jpg" alt="Centered Image">
-                    <h3>Project 3</h3>
-                    <p>I designed and built this One Piece game dashboard using Visual Studio. It serves as the main hub where players can access game features, stats, and other important info. The layout is clean and easy to navigate, making it simple for users to interact with different sections. This project was a great way to combine my love for One Piece with my skills in UI design and development!</p>
-                    <div class="badges">
-                        <span class="badge">HTML</span>
-                        <span class="badge">CSS</span>
-                        <span class="badge">JavaScript</span>
-                        <span class="badge">2025</span>
-                      </div>
+                    <div class="project-item">
+                        <img id="project3" src="images/Screenshot 2025-03-08 101922.jpg" alt="Centered Image">
+                        <h2 class="video-title neon-text">Project 3</h2>
+                        <p>I made this static website for clients looking to hire freelancers. It features a clean and modern design, making it easy to explore services, and connect with the right talent effortlessly. (Please note that this is a static website only.)</p>
+                        <div class="badges">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                            <span class="badge">JavaScript</span>
+                            
+                        </div>
+                        <a href="https://orl6911.github.io/FreelanceServiceHub/" target="_blank" class="project-link">Here's the link to my project</a>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <p class="neon-text">Here are samples of my video editing work.</p>
-            <div class="watch-edits-container">
-                <a href="https://drive.google.com/drive/folders/1qN1l1XxrkCIkQmGxEQ4xQ2veUtkQ-6Qi?usp=sharing" target="_blank" class="watch-edits-button">
-                    <i class="fas fa-video"></i> Watch My Edits
-                </a>
-            </div>
-           
-        </section>
+</div>
+          
+                <div class="video-edits-container">
+                    <h2 class="video-title neon-text">Here are samples of my video editing work.</h2>
+                    <div class="watch-edits-container">
+                        <a href="https://drive.google.com/drive/folders/1qN1l1XxrkCIkQmGxEQ4xQ2veUtkQ-6Qi?usp=sharing" target="_blank" class="watch-edits-button">
+                            <i class="fas fa-video"></i> Watch My Edits
+                        </a>
+                    </div>
+                
+            </section>
 
         <section id="contact">
             <div class="contact-container">
@@ -166,7 +170,7 @@
                 <div class="contact-title">Contact Me</div>
                 <div class="contact-info">
                     <a href="mailto:orlmirshen@gmail.com"><i class="fa-solid fa-envelope"></i> orlmirshen@gmail.com</a>
-                    <a href="tel:09983362425"><i class="fa-solid fa-phone"></i> 0998-336-2425</a>
+                    <a href="tel:09983362425"><i class="fa-solid fa-phone"></i> +63 98-336-2425</a>
                     <div class="contact-title">Social Media</div>
                     <div class="social-icons">
                         <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i>Facebook</a>
@@ -305,18 +309,16 @@ function createParticles() {
   color: #000;
   transform: scale(1.1);
 }
-@keyframes glitch {
-    0% { text-shadow: 4px 4px 0px cyan, -4px -4px 0px lime; }
+.typing-title {
+    font-family: 'Orbitron', sans-serif;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #0ff;
+    font-size: 2rem;
+    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
 }
-    .typing-title {
-        font-family: 'Orbitron', sans-serif;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid #0ff;
-  font-size: 2.5rem;
-  animation: typing 3s steps(30, end), blink 0.75s step-end infinite, glitch 0.5s infinite alternate;
-}
+
 
 @keyframes typing {
   from {
@@ -343,7 +345,6 @@ function createParticles() {
   padding: 20px;
   overflow: hidden;
 }
-
 
 #loader {
     position: fixed;
@@ -383,11 +384,12 @@ body.loading {
   50% { opacity: 0.6; }
 }
 
-    #typed-text {
-  color: #00FFFF; 
+    #typed-text { 
   font-size: 1.5rem;
   font-weight: bold;
-  text-shadow: 0 0 8px #00FFFF, 0 0 16px #00FFFF;
+  text-shadow: 0 0 10px rgba(0, 255, 170, 0.8), 
+                 0 0 20px rgba(0, 255, 170, 0.5), 
+                 0 0 30px rgba(0, 255, 170, 0.3);
 }
 
       .fade {
@@ -419,10 +421,13 @@ header {
     z-index: 10;
     background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
     color: #00ffcc;
-    padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    height: 150px; 
 }
+
 header::after {
   content: '';
   position: absolute;
@@ -457,7 +462,7 @@ header::after {
   inset: 0;
   border-radius: 20px;
   padding: 2px;
-  background: linear-gradient(90deg, #00ff9d, #00fff2, #09ff00);
+  background: linear-gradient(90deg,#0c6400, #000000, #000000, #0c6400);
   background-size: 300% 300%;
   animation: pulseBorder 5s infinite linear;
   z-index: -1;
@@ -487,7 +492,7 @@ header::after {
     text-shadow: 0 0 10px rgba(0, 255, 170, 0.8), 
                  0 0 20px rgba(0, 255, 170, 0.5), 
                  0 0 30px rgba(0, 255, 170, 0.3);
-    transform: translateY(-50%);
+    transform: translateY(-150%);
 }
 .wave-container {
     position: absolute;
@@ -536,7 +541,21 @@ svg {
     gap: 20px; 
     flex-wrap: wrap; 
 }
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #00ffcc;
+    color: #0d0d0d;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
 
+.project-link:hover {
+    background-color: #00e6b3;
+    transform: scale(1.05);
+}
 .project-item {
     width: 500px; 
     text-align: center; 
@@ -583,7 +602,6 @@ nav {
     padding: 1rem 0;
     width: 100%;
     backdrop-filter: blur(10px); 
-    margin-top: 20px; 
 }
 
 nav ul {
@@ -680,7 +698,7 @@ nav ul li a:hover::after {
     bottom: -10px;
     border-radius: 25px;
     border: 3px solid transparent;
-    background: linear-gradient(90deg, #09ff00, #00b7ff, #00ffdd);
+    background: linear-gradient(90deg, #0c6400, #000000, #000000, #0c6400);
     background-size: 300% 300%;
     animation: move-border 3s linear infinite;
     z-index: -1; 
@@ -713,7 +731,7 @@ nav ul li a:hover::after {
     bottom: -5px;
     border-radius: 30px;
     border: 3px solid transparent;
-    background: linear-gradient(90deg, #15ff00, #1100ff, #00ff80);
+    background: linear-gradient(90deg, #0c6400, #000000, #000000, #0c6400);
     background-size: 300% 300%;
     animation: move-border 3s linear infinite;
     z-index: -1; 
@@ -738,7 +756,7 @@ section.active {
 
 section#home {
     background: linear-gradient(135deg, rgba(0, 255, 204, 0.1), rgba(0, 0, 0, 0.5));
-    padding: 20px;
+    padding: 10px;
 }
 
 .tool-icons {
@@ -980,130 +998,194 @@ footer {
         }
     }
     @media (max-width: 768px) {
-        body {
-            max-width: 100vw;
-            overflow-x: hidden;
+    body {
+        max-width: 100vw;
+        overflow-x: hidden;
         font-size: 16px;
-        line-height: 1.5; 
+        line-height: 1.5;
+        text-align: center;
     }
-    .typing-title {
-        font-size: 1.5rem;
-    }
-    .neon-text {
-        font-size: 1.5rem;
+
+    header {
+    padding: 10px 0; 
+    margin: 0;
+}
+
+
+    .typing-title, .neon-text {
+        font-size: 2rem; 
+        margin: 5px 0; 
+        text-align: center;
     }
 
     .badge {
-        font-size: 10px;
+        font-size: 12px; 
     }
 
     .hero {
+        display: flex;
         flex-direction: column;
-        padding: 30px 10px;
-        max-width: 100vw;
-        overflow-x: hidden;
-        overflow-y: hidden;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        gap: 15px; 
+        margin-bottom: 10px; 
     }
-
-     .hero-img {
+    .hero-img {
         width: 100%;
-        max-width: 350px; 
-        margin: 0 auto; 
+        max-width: 200px; 
     }
 
     .hero-img img {
         width: 100%;
         height: auto;
-        object-fit: contain; 
+        object-fit: contain;
     }
-     
-    .project-container,
-    nav ul{
+
+    .project-container, nav ul {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 10px; 
+        padding: 0;
     }
+
     .tool-icons {
-        flex-direction: row; 
-        justify-content: center; 
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
-    .project-item,
-    .tool-icon {
-        width: 100%;
-        margin: 10px 0;
+
+    .project-item, .tool-icon {
+        width: 90%;
     }
 
     nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
+        
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    gap: 20px; 
+    padding: 0;
+    list-style: none;
+}
 
-    nav ul li {
-        margin: 10px 0;
-    }
+
+nav ul li {
+
+    margin: 0;
+}
+
+nav ul li a {
+    font-size: 1rem;
+    
+}
 
     .contact-info {
         font-size: 1rem;
-        text-align: center; 
+        text-align: center;
+        margin: 10px 0;
     }
+
     header::after {
-        animation: none; 
-        display: none; 
-  }
+        display: none;
+    }
+
     .video-edits-container {
         padding: 10px;
+        margin: 15px 0; 
     }
+
     .project-item img {
         width: 100%;
-        height: auto; 
-        max-width: 400px;
+        height: auto;
     }
-    #loader .loader-content {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+
+    #loader .loader-content, .loader-content {
+        width: 100%;
+        max-width: 350px; 
+        margin: 0 auto;
+    }
+
+
+ 
+
+.role-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
 }
 
-    .loader-content {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto; 
-    }
-    .role-text {
-        display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    position: absolute;
-    top: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    }
+.coder {
+    right: 50px; 
+}
 
-    .designer, .editor {
-    font-size: 1rem;
-    font-weight: bold; 
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px; 
-    white-space: nowrap; 
+.designer {
+    left: 50px; 
 }
 
     #start-button, .watch-edits-button {
-        padding: 15px 30px; 
+        padding: 12px 24px; 
         font-size: 16px; 
     }
-      section {
+
+    section {
         background-color: rgba(0, 0, 0, 0.8);
         padding: 15px;
         border-radius: 10px;
         max-width: 100%;
         box-sizing: border-box;
+        margin: 10px 0; 
     }
+
     .particle {
         display: none;
     }
 
- }
+  
+    nav {
+        position: relative;
+        z-index: 10;
+       
+
+    }
+    
+  
+    .typing-title {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+    .tools-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; 
+    }
+
+    .tool-icon img {
+        width: 70px; 
+        height: auto;
+    }
+
+    
+    .project-item {
+        padding: 10px; 
+        border-radius: 8px; 
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    section {
+        margin: 10px 0; 
+    }
+
+}
+
 </style>
